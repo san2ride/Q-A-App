@@ -15,7 +15,6 @@
 		A4FFB65B1D21CF4300A0F006 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FFB65A1D21CF4300A0F006 /* AnswerViewController.swift */; };
 		A4FFB6601D21CFA600A0F006 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FFB65F1D21CFA600A0F006 /* Question.swift */; };
 		A4FFB6631D22045400A0F006 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FFB6621D22045400A0F006 /* QuestionViewController.swift */; };
-		A4FFB6651D22395700A0F006 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FFB6641D22395700A0F006 /* Answer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		A4FFB65A1D21CF4300A0F006 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		A4FFB65F1D21CFA600A0F006 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A4FFB6621D22045400A0F006 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		A4FFB6641D22395700A0F006 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				A4FFB65F1D21CFA600A0F006 /* Question.swift */,
-				A4FFB6641D22395700A0F006 /* Answer.swift */,
 			);
 			name = Modals;
 			sourceTree = "<group>";
@@ -183,7 +180,6 @@
 				A4FFB6571D21CF1100A0F006 /* QuestionTableViewCell.swift in Sources */,
 				A4FFB6631D22045400A0F006 /* QuestionViewController.swift in Sources */,
 				A4FFB65B1D21CF4300A0F006 /* AnswerViewController.swift in Sources */,
-				A4FFB6651D22395700A0F006 /* Answer.swift in Sources */,
 				A4FFB6601D21CFA600A0F006 /* Question.swift in Sources */,
 				A4FFB6451D21CEF300A0F006 /* AppDelegate.swift in Sources */,
 			);
@@ -335,6 +331,7 @@
 				A4FFB6551D21CEF300A0F006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

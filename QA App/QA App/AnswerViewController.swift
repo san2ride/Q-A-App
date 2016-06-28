@@ -10,8 +10,7 @@ import UIKit
 
 class AnswerViewController: UIViewController {
 
-    var theQuestion: Question?
-    var answersArray = [Answer]()
+    
     
     @IBOutlet weak var ans1Button: UIButton!
     
@@ -28,80 +27,80 @@ class AnswerViewController: UIViewController {
 //            self.answersArray?.text = quest.question
 //        }
 
-        let quest5 = Answer(answer: "6")
-        self.answersArray.append(quest5)
-        
-        let quest6 = Answer(answer: "5")
-        self.answersArray.append(quest6)
-        
-        let quest7 = Answer(answer: "4")
-        self.answersArray.append(quest7)
-        
-        let quest8 = Answer(answer: "3")
-        self.answersArray.append(quest8)
-        
-    }
-    
-//    @IBAction func addButton(sender: AnyObject) {
+//        let quest5 = Answer(answer: "6")
+//        self.answersArray.append(quest5)
 //        
-//        let alert = UIAlertController(title: "Add Name", message: "Add a new name", preferredStyle: .Alert)
+//        let quest6 = Answer(answer: "5")
+//        self.answersArray.append(quest6)
 //        
-//        let saveAction = UIAlertAction(title: "Save",
-//                                       style: .Default,
-//                                     handler: {
-//                                            
-//            (action) in
-//                                            
-//            if let textField = alert.textField?.first {
-//                
-//                if let name = textField.text {
-//                    print(name)
-//                }
-//            }
-//        })
+//        let quest7 = Answer(answer: "4")
+//        self.answersArray.append(quest7)
 //        
-//        alert.addAction(saveAction)
+//        let quest8 = Answer(answer: "3")
+//        self.answersArray.append(quest8)
 //        
-//        let cancelAction = UIAlertAction(title: "Cancel",
-//                                         style: .Default) {
-//                                          (actiion) in
-//        
-//        }
-//    
-//        alert.addAction(cancelAction)
-//    
-//        alert.addTextFieldWithConfigurationHandler {
-//            (textField) in
-//    
-//            textField.placeholder = "Please enter your name"
-//    
-//        }
-//    
-//        self.presentViewController(alert, animated: true, completion: nil)
-//    
 //    }
+//    
+////    @IBAction func addButton(sender: AnyObject) {
+////        
+////        let alert = UIAlertController(title: "Add Name", message: "Add a new name", preferredStyle: .Alert)
+////        
+////        let saveAction = UIAlertAction(title: "Save",
+////                                       style: .Default,
+////                                     handler: {
+////                                            
+////            (action) in
+////                                            
+////            if let textField = alert.textField?.first {
+////                
+////                if let name = textField.text {
+////                    print(name)
+////                }
+////            }
+////        })
+////        
+////        alert.addAction(saveAction)
+////        
+////        let cancelAction = UIAlertAction(title: "Cancel",
+////                                         style: .Default) {
+////                                          (actiion) in
+////        
+////        }
+////    
+////        alert.addAction(cancelAction)
+////    
+////        alert.addTextFieldWithConfigurationHandler {
+////            (textField) in
+////    
+////            textField.placeholder = "Please enter your name"
+////    
+////        }
+////    
+////        self.presentViewController(alert, animated: true, completion: nil)
+////    
+////    }
+//
+//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        return 1
+//    }
+//    
+//    
+//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return self.answersArray.count
+//        
+//    }
+//    
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        
+//        let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath)
+//        
+//        let a = self.answersArray[indexPath.row]
+//            
+//            cell.textLabel?.text = a.answer
+//        
+//            return cell
+//    
+//
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
     }
-    
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.answersArray.count
-        
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath)
-        
-        let a = self.answersArray[indexPath.row]
-            
-            cell.textLabel?.text = a.answer
-        
-            return cell
-    
-    }
-
-    
 }
