@@ -10,8 +10,10 @@ import UIKit
 
 class AnswerViewController: UIViewController {
 
+    var passQuestion: Question?
+    var randomNumber: UInt32 = 0
     
-    
+    @IBOutlet weak var qstringLabel: UILabel!
     @IBOutlet weak var ans1Button: UIButton!
     
     @IBOutlet weak var ans2Button: UIButton!
@@ -23,84 +25,109 @@ class AnswerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let quest = self.theQuestion {
-//            self.answersArray?.text = quest.question
-//        }
-
-//        let quest5 = Answer(answer: "6")
-//        self.answersArray.append(quest5)
-//        
-//        let quest6 = Answer(answer: "5")
-//        self.answersArray.append(quest6)
-//        
-//        let quest7 = Answer(answer: "4")
-//        self.answersArray.append(quest7)
-//        
-//        let quest8 = Answer(answer: "3")
-//        self.answersArray.append(quest8)
-//        
-//    }
-//    
-////    @IBAction func addButton(sender: AnyObject) {
-////        
-////        let alert = UIAlertController(title: "Add Name", message: "Add a new name", preferredStyle: .Alert)
-////        
-////        let saveAction = UIAlertAction(title: "Save",
-////                                       style: .Default,
-////                                     handler: {
-////                                            
-////            (action) in
-////                                            
-////            if let textField = alert.textField?.first {
-////                
-////                if let name = textField.text {
-////                    print(name)
-////                }
-////            }
-////        })
-////        
-////        alert.addAction(saveAction)
-////        
-////        let cancelAction = UIAlertAction(title: "Cancel",
-////                                         style: .Default) {
-////                                          (actiion) in
-////        
-////        }
-////    
-////        alert.addAction(cancelAction)
-////    
-////        alert.addTextFieldWithConfigurationHandler {
-////            (textField) in
-////    
-////            textField.placeholder = "Please enter your name"
-////    
-////        }
-////    
-////        self.presentViewController(alert, animated: true, completion: nil)
-////    
-////    }
-//
-//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        return 1
-//    }
-//    
-//    
-//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.answersArray.count
-//        
-//    }
-//    
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        
-//        let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath)
-//        
-//        let a = self.answersArray[indexPath.row]
-//            
-//            cell.textLabel?.text = a.answer
-//        
-//            return cell
-//    
-//
+        
+        
+    self.randomNumber = arc4random_uniform(4) + 1
+        print("The randomNuber is\(self.randomNumber)")
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.qstringLabel.text = passQuestion?.question
+        
+        self.setupButtons()
+    }
+    
+    func setupButtons() {
+        
+        self.ans1Button.setTitle("Answer 1", forState: .Normal)
+        self.ans2Button.setTitle("Answer 2", forState: .Normal)
+        self.ans3Button.setTitle("Answer 3", forState: .Normal)
+        self.ans4Button.setTitle("Answer 4", forState: .Normal)
+        
+        switch(randomNumber) {
+            case 1: self.ans1Button.setTitle(passQuestion?.answer, forState: .Normal)
+            case 2: self.ans2Button.setTitle(passQuestion?.answer, forState: .Normal)
+            case 3: self.ans3Button.setTitle(passQuestion?.answer, forState: .Normal)
+            default: self.ans4Button.setTitle(passQuestion?.answer, forState: .Normal)
+        }
+        
+        if randomNumber == 1 {
+            self.ans1Button.setTitle(passQuestion?.answer, forState: .Normal)
+        } else if randomNumber == 2 {
+            self.ans2Button.setTitle(passQuestion?.answer, forState: .Normal)
+        } else if randomNumber == 3 {
+            self.ans3Button.setTitle(passQuestion?.answer, forState: .Normal)
+        } else {
+            self.ans4Button.setTitle(passQuestion?.answer, forState: .Normal)
+        }
+    }
+        
+    func doAlert(title: String) {
+            
+        let alert = UIAlertController(title: title, message: title, preferredStyle: .Alert)
+            
+            
+        let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            
+            
+        alert.addAction(okAction)
+            
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+        
+    
+    @IBAction func ans1ButtonTapped(sender: UIButton) {
+        
+        print("ans1ButtonTapped")
+        
+        if randomNumber == 1 {
+            self.doAlert("Correct")
+        } else {
+            self.doAlert("InCorrect!")
+        }
 
     }
+    
+    
+    @IBAction func ans2ButtonTapped(sender: UIButton) {
+        
+        print("ans2ButtonTapped")
+        
+        if randomNumber == 2 {
+            self.doAlert("Correct")
+        } else {
+            self.doAlert("InCorrect!")
+        }
+
+    }
+    
+    @IBAction func ans3ButtonTapped(sender: UIButton) {
+        
+        print("ans3ButtonTapped")
+        
+        if randomNumber == 3 {
+            self.doAlert("Correct")
+        } else {
+            self.doAlert("InCorrect!")
+        }
+
+    }
+    
+    
+    @IBAction func ans4ButtonTapped(sender: UIButton) {
+        
+        print("ans4ButtonTapped")
+        
+        if randomNumber == 4 {
+            self.doAlert("Correct")
+        } else {
+            self.doAlert("InCorrect!")
+        }
+
+    }
+    
 }

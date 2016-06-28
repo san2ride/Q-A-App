@@ -15,6 +15,13 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.questionData()
+        
+    }
+    
+    func questionData() {
+        
+        
         let quest1 = Question(question: "How many Super Bowls, Pittsburgh Steelers?", answer: "6")
         self.questionsArray.append(quest1)
         
@@ -29,21 +36,17 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.questionsArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! QuestionTableViewCell
         
         let q = self.questionsArray[indexPath.row]
         
-        cell.textLabel?.text = q.question
+        cell.qstringLabel?.text = q.question
         
         return cell
         
@@ -57,10 +60,12 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-//    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        let controller = segue.destinationViewController as? AnswerViewController
-//        
-//        }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let a = segue.destinationViewController as? AnswerViewController {
+            a.passQuestion = self.currentQuestion
+        }
+    }
+    
     
 }

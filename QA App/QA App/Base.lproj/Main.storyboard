@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -69,39 +67,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yR1-mM-wJh">
-                                <rect key="frame" x="20" y="155" width="95" height="35"/>
+                                <rect key="frame" x="15" y="155" width="95" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="9px-TR-6Hb"/>
+                                    <constraint firstAttribute="height" constant="35" id="Peb-DH-Hl2"/>
+                                    <constraint firstAttribute="width" constant="95" id="Taj-4b-NnE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="16"/>
                                 <state key="normal" title="Answer 1" backgroundImage="Strip"/>
                                 <connections>
-                                    <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="E2E-Ii-HQN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5b-GW-Fze">
-                                <rect key="frame" x="158" y="155" width="95" height="35"/>
-                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="20"/>
-                                <state key="normal" title="Answer 2" backgroundImage="Strip"/>
-                                <connections>
-                                    <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="7Iz-h6-LFj"/>
+                                    <action selector="ans1ButtonTapped:" destination="aXe-RX-FUt" eventType="touchUpInside" id="vG3-Vd-mO5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vue-XF-n83">
-                                <rect key="frame" x="319" y="155" width="95" height="35"/>
+                                <rect key="frame" x="337" y="155" width="95" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="JmN-Wb-fFD"/>
+                                    <constraint firstAttribute="width" constant="95" id="Sse-6e-cF4"/>
+                                    <constraint firstAttribute="height" constant="35" id="uMb-Tr-3nn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="16"/>
                                 <state key="normal" title="Answer 3" backgroundImage="Strip"/>
                                 <connections>
                                     <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="Uub-iW-nRd"/>
+                                    <action selector="ans3ButtonTapped:" destination="aXe-RX-FUt" eventType="touchUpInside" id="SvR-Cw-5ah"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSK-D2-D5m">
+                                <rect key="frame" x="493" y="155" width="95" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="LA2-Lc-u5m"/>
+                                    <constraint firstAttribute="width" constant="95" id="cOr-85-ncj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="16"/>
+                                <state key="normal" title="Answer 4" backgroundImage="Strip"/>
+                                <connections>
+                                    <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="D7d-Uo-KIr"/>
+                                    <action selector="ans4ButtonTapped:" destination="aXe-RX-FUt" eventType="touchUpInside" id="Rdb-Ak-DLo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVi-fJ-LJE">
                                 <rect key="frame" x="3" y="67" width="594" height="37"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="NLT-RV-i5N"/>
+                                    <constraint firstAttribute="height" constant="37" id="JJx-2o-nnP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -110,56 +116,58 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Super-Bowl" translatesAutoresizingMaskIntoConstraints="NO" id="5qm-oj-x4c">
                                 <rect key="frame" x="0.0" y="200" width="600" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="Utl-a2-AIF"/>
-                                    <constraint firstAttribute="height" constant="400" id="aKa-Qb-VU3"/>
+                                    <constraint firstAttribute="height" constant="400" id="pbn-TE-8lz"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSK-D2-D5m">
-                                <rect key="frame" x="485" y="155" width="95" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5b-GW-Fze">
+                                <rect key="frame" x="173" y="155" width="95" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="pUw-lF-vUB"/>
+                                    <constraint firstAttribute="width" constant="95" id="IWY-Os-kim"/>
+                                    <constraint firstAttribute="height" constant="35" id="bP2-4f-NTd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="20"/>
-                                <state key="normal" title="Answer 4" backgroundImage="Strip"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="16"/>
+                                <state key="normal" title="Answer 2" backgroundImage="Strip"/>
                                 <connections>
-                                    <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="D7d-Uo-KIr"/>
+                                    <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="7Iz-h6-LFj"/>
+                                    <action selector="ans2ButtonTapped:" destination="aXe-RX-FUt" eventType="touchUpInside" id="TU8-fj-keO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5qm-oj-x4c" firstAttribute="top" secondItem="S5b-GW-Fze" secondAttribute="bottom" constant="10" id="2P3-PJ-ezP"/>
-                            <constraint firstItem="5qm-oj-x4c" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leading" id="6Ch-X0-ceQ"/>
-                            <constraint firstItem="RSK-D2-D5m" firstAttribute="leading" secondItem="vue-XF-n83" secondAttribute="trailing" constant="71" id="6V3-NT-zu5"/>
-                            <constraint firstItem="RSK-D2-D5m" firstAttribute="baseline" secondItem="S5b-GW-Fze" secondAttribute="firstBaseline" id="Af6-Zx-sUS"/>
-                            <constraint firstItem="RSK-D2-D5m" firstAttribute="baseline" secondItem="S5b-GW-Fze" secondAttribute="baseline" id="BFS-ZA-yPp"/>
-                            <constraint firstItem="RSK-D2-D5m" firstAttribute="trailing" secondItem="uWY-MR-9JF" secondAttribute="trailingMargin" id="Gce-gt-zRs"/>
-                            <constraint firstItem="yR1-mM-wJh" firstAttribute="firstBaseline" secondItem="S5b-GW-Fze" secondAttribute="baseline" id="KVU-Gq-fre"/>
-                            <constraint firstItem="yR1-mM-wJh" firstAttribute="top" secondItem="S5b-GW-Fze" secondAttribute="top" id="Mx3-5L-QqD"/>
-                            <constraint firstItem="vue-XF-n83" firstAttribute="firstBaseline" secondItem="S5b-GW-Fze" secondAttribute="baseline" id="NfC-Cg-fpm"/>
-                            <constraint firstItem="RSK-D2-D5m" firstAttribute="top" secondItem="XVi-fJ-LJE" secondAttribute="bottom" constant="51" id="S2V-a0-tgO"/>
-                            <constraint firstItem="XVi-fJ-LJE" firstAttribute="top" secondItem="zm4-li-RXa" secondAttribute="bottom" constant="3" id="Su8-iV-4F6"/>
-                            <constraint firstItem="S5b-GW-Fze" firstAttribute="leading" secondItem="yR1-mM-wJh" secondAttribute="trailing" constant="43" id="T8k-5u-mdl"/>
-                            <constraint firstItem="vue-XF-n83" firstAttribute="top" secondItem="RSK-D2-D5m" secondAttribute="top" id="Ufu-PI-bDR"/>
-                            <constraint firstItem="vue-XF-n83" firstAttribute="top" secondItem="S5b-GW-Fze" secondAttribute="top" id="VWG-Uv-oA9"/>
-                            <constraint firstItem="d3S-id-8Sh" firstAttribute="top" secondItem="5qm-oj-x4c" secondAttribute="bottom" id="WFf-6w-4UC"/>
-                            <constraint firstItem="yR1-mM-wJh" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leadingMargin" id="geg-Xr-VV2"/>
-                            <constraint firstItem="vue-XF-n83" firstAttribute="baseline" secondItem="RSK-D2-D5m" secondAttribute="firstBaseline" id="i8N-wR-M6z"/>
-                            <constraint firstItem="yR1-mM-wJh" firstAttribute="baseline" secondItem="S5b-GW-Fze" secondAttribute="baseline" id="jpZ-jI-ShO"/>
-                            <constraint firstItem="5qm-oj-x4c" firstAttribute="bottom" secondItem="d3S-id-8Sh" secondAttribute="top" id="k3l-BX-xpQ"/>
-                            <constraint firstItem="vue-XF-n83" firstAttribute="baseline" secondItem="S5b-GW-Fze" secondAttribute="baseline" id="mlV-mV-zcB"/>
-                            <constraint firstItem="5qm-oj-x4c" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leading" id="qHS-jR-jcC"/>
-                            <constraint firstItem="XVi-fJ-LJE" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leadingMargin" constant="-17" id="sJX-25-a0c"/>
-                            <constraint firstItem="XVi-fJ-LJE" firstAttribute="centerX" secondItem="5qm-oj-x4c" secondAttribute="centerX" id="wHi-fG-TLT"/>
-                            <constraint firstItem="vue-XF-n83" firstAttribute="leading" secondItem="S5b-GW-Fze" secondAttribute="trailing" constant="66" id="xKp-QH-lrl"/>
-                            <constraint firstAttribute="trailing" secondItem="5qm-oj-x4c" secondAttribute="trailing" id="yjE-sa-bBx"/>
+                            <constraint firstItem="5qm-oj-x4c" firstAttribute="top" secondItem="yR1-mM-wJh" secondAttribute="bottom" constant="10" id="3vW-gQ-s0v"/>
+                            <constraint firstItem="S5b-GW-Fze" firstAttribute="leading" secondItem="yR1-mM-wJh" secondAttribute="trailing" constant="63" id="7dM-t6-pl6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RSK-D2-D5m" secondAttribute="trailing" constant="-8" id="8Cl-Id-yZH"/>
+                            <constraint firstItem="XVi-fJ-LJE" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leading" constant="3" id="9aG-2V-FQS"/>
+                            <constraint firstItem="vue-XF-n83" firstAttribute="leading" secondItem="S5b-GW-Fze" secondAttribute="trailing" constant="77" id="B3y-eU-ZDs"/>
+                            <constraint firstItem="d3S-id-8Sh" firstAttribute="top" secondItem="5qm-oj-x4c" secondAttribute="bottom" id="BlW-7J-hjb"/>
+                            <constraint firstItem="yR1-mM-wJh" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leadingMargin" constant="-5" id="F9P-dK-dA6"/>
+                            <constraint firstItem="5qm-oj-x4c" firstAttribute="top" secondItem="vue-XF-n83" secondAttribute="bottom" constant="10" id="Mji-Iw-8jG"/>
+                            <constraint firstItem="RSK-D2-D5m" firstAttribute="leading" secondItem="vue-XF-n83" secondAttribute="trailing" constant="61" id="Zed-sV-yIF"/>
+                            <constraint firstItem="5qm-oj-x4c" firstAttribute="top" secondItem="S5b-GW-Fze" secondAttribute="bottom" constant="10" id="bua-E4-uD7"/>
+                            <constraint firstAttribute="trailing" secondItem="XVi-fJ-LJE" secondAttribute="trailing" constant="3" id="gRu-zn-OkZ"/>
+                            <constraint firstItem="5qm-oj-x4c" firstAttribute="top" secondItem="RSK-D2-D5m" secondAttribute="bottom" constant="10" id="hRK-8b-6Xy"/>
+                            <constraint firstItem="S5b-GW-Fze" firstAttribute="leading" secondItem="yR1-mM-wJh" secondAttribute="trailing" constant="63" id="kk7-KG-La3"/>
+                            <constraint firstAttribute="trailing" secondItem="5qm-oj-x4c" secondAttribute="trailing" id="nDp-qQ-msd"/>
+                            <constraint firstItem="XVi-fJ-LJE" firstAttribute="top" secondItem="zm4-li-RXa" secondAttribute="bottom" constant="3" id="tmU-Jj-RM1"/>
+                            <constraint firstItem="RSK-D2-D5m" firstAttribute="leading" secondItem="vue-XF-n83" secondAttribute="trailing" constant="61" id="udJ-I5-b8W"/>
+                            <constraint firstItem="5qm-oj-x4c" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leading" id="vGR-pl-JYd"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7dM-t6-pl6"/>
+                                <exclude reference="B3y-eU-ZDs"/>
+                                <exclude reference="Zed-sV-yIF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="ans1Button" destination="yR1-mM-wJh" id="ia5-OO-iJG"/>
+                        <outlet property="ans1ButtonTapped" destination="yR1-mM-wJh" id="ysG-Eh-fQZ"/>
                         <outlet property="ans2Button" destination="S5b-GW-Fze" id="IMY-Qe-kxc"/>
                         <outlet property="ans3Button" destination="vue-XF-n83" id="DYC-CM-xVB"/>
                         <outlet property="ans4Button" destination="RSK-D2-D5m" id="Hco-ER-7qR"/>
+                        <outlet property="qstringLabel" destination="XVi-fJ-LJE" id="EY0-uU-tFJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UI2-Nq-pv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
