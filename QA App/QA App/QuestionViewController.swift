@@ -15,18 +15,17 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let quest1 = Question(question: "How many Super Bowls, Pittsburgh Steelers?", answer: "6")
+        let quest1 = Question(question: "How many Super Bowls, Pittsburgh Steelers?")
         self.questionsArray.append(quest1)
         
-        let quest2 = Question(question: "How many Super Bowls, Dallas Cowboys?", answer: "5")
+        let quest2 = Question(question: "How many Super Bowls, Dallas Cowboys?")
         self.questionsArray.append(quest2)
         
-        let quest3 = Question(question: "How many Super Bowls, New England Patriots", answer: "4")
+        let quest3 = Question(question: "How many Super Bowls, New England Patriots")
         self.questionsArray.append(quest3)
         
-        let quest4 = Question(question: "How many Super Bowls, Denver Broncos?", answer: "3")
+        let quest4 = Question(question: "How many Super Bowls, Denver Broncos?")
         self.questionsArray.append(quest4)
-        
         
     }
     
@@ -57,5 +56,11 @@ class QuestionViewController: UIViewController, UITableViewDelegate, UITableView
         self.performSegueWithIdentifier("AnswerSegue", sender: nil)
         
     }
+    
+//    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//        let controller = segue.destinationViewController as? AnswerViewController
+//        
+//        }
     
 }

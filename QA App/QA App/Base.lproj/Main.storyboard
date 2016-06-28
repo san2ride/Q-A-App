@@ -3,30 +3,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Answers-->
-        <scene sceneID="Owc-PV-9I1">
-            <objects>
-                <viewController title="Answers" id="qoh-6V-Lgj" customClass="AnswerViewController" customModule="QA_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TQi-fq-d1B"/>
-                        <viewControllerLayoutGuide type="bottom" id="izZ-c4-Yrl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="f2N-zU-1C0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f0Y-jp-c1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1531" y="308"/>
-        </scene>
         <!--Questions-->
         <scene sceneID="c6I-AT-fl4">
             <objects>
-                <viewController title="Questions" id="MAo-FL-74d" customClass="QuestionViewController" customModule="QA_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MAo-FL-74d" customClass="QuestionViewController" customModule="QA_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EtX-mK-mob"/>
                         <viewControllerLayoutGuide type="bottom" id="xmT-Ww-rbY"/>
@@ -62,14 +47,145 @@
                             <constraint firstAttribute="trailing" secondItem="yfS-ru-xPM" secondAttribute="trailing" id="usM-To-uhK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9nI-xA-nAi"/>
+                    <navigationItem key="navigationItem" title="Questions" id="9nI-xA-nAi"/>
                     <connections>
-                        <segue destination="qoh-6V-Lgj" kind="show" identifier="AnswerSegue" id="Lk5-yn-OEE"/>
+                        <segue destination="aXe-RX-FUt" kind="show" identifier="AnswerSegue" id="YtJ-yK-g5q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yar-Zp-uY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="814" y="308"/>
+        </scene>
+        <!--Answer View Controller-->
+        <scene sceneID="e6A-nl-8t5">
+            <objects>
+                <viewController id="aXe-RX-FUt" customClass="AnswerViewController" customModule="QA_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zm4-li-RXa"/>
+                        <viewControllerLayoutGuide type="bottom" id="d3S-id-8Sh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uWY-MR-9JF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jsp-3f-QtE">
+                                <rect key="frame" x="0.0" y="285" width="636" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="2pF-2V-f0B"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell2" id="90t-Rn-OR4">
+                                        <rect key="frame" x="0.0" y="92" width="636" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="90t-Rn-OR4" id="IZY-Gj-Epr">
+                                            <rect key="frame" x="0.0" y="0.0" width="636" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Super-Bowl" translatesAutoresizingMaskIntoConstraints="NO" id="xKQ-0c-s4v">
+                                <rect key="frame" x="0.0" y="64" width="600" height="462"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yR1-mM-wJh">
+                                <rect key="frame" x="41" y="151" width="99" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9PU-kv-w8x"/>
+                                    <constraint firstAttribute="width" constant="99" id="xVP-zh-2ms"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="20"/>
+                                <state key="normal" title="Answer 1"/>
+                                <connections>
+                                    <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="E2E-Ii-HQN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5b-GW-Fze">
+                                <rect key="frame" x="41" y="274" width="107" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="c42-sN-i5c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="20"/>
+                                <state key="normal" title="Answer 2"/>
+                                <connections>
+                                    <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="7Iz-h6-LFj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vue-XF-n83">
+                                <rect key="frame" x="449" y="141" width="95" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Mpl-tE-IlB"/>
+                                    <constraint firstAttribute="width" constant="95" id="ZeX-FX-Pte"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="20"/>
+                                <state key="normal" title="Answer 3"/>
+                                <connections>
+                                    <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="Uub-iW-nRd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSK-D2-D5m">
+                                <rect key="frame" x="446" y="274" width="98" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="Era-pr-YYE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="20"/>
+                                <state key="normal" title="Answer 4"/>
+                                <connections>
+                                    <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="D7d-Uo-KIr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yR1-mM-wJh" firstAttribute="top" secondItem="zm4-li-RXa" secondAttribute="bottom" constant="87" id="0YJ-kj-Qrr"/>
+                            <constraint firstItem="yR1-mM-wJh" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leadingMargin" constant="21" id="1T0-TB-kOQ"/>
+                            <constraint firstItem="xKQ-0c-s4v" firstAttribute="leading" secondItem="jsp-3f-QtE" secondAttribute="leading" id="2O6-zw-EPn"/>
+                            <constraint firstItem="jsp-3f-QtE" firstAttribute="leading" secondItem="yR1-mM-wJh" secondAttribute="trailing" constant="-83" id="2PQ-ko-0D9"/>
+                            <constraint firstItem="S5b-GW-Fze" firstAttribute="top" secondItem="yR1-mM-wJh" secondAttribute="bottom" constant="93" id="3e2-NR-qsK"/>
+                            <constraint firstItem="yR1-mM-wJh" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leadingMargin" constant="21" id="5pl-hH-mWO"/>
+                            <constraint firstItem="d3S-id-8Sh" firstAttribute="top" secondItem="jsp-3f-QtE" secondAttribute="bottom" constant="15" id="9Mu-pe-BoC"/>
+                            <constraint firstItem="vue-XF-n83" firstAttribute="top" secondItem="zm4-li-RXa" secondAttribute="bottom" constant="77" id="9ZV-mN-he5"/>
+                            <constraint firstItem="S5b-GW-Fze" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leading" constant="188" id="9nU-Lo-zCe"/>
+                            <constraint firstItem="S5b-GW-Fze" firstAttribute="firstBaseline" secondItem="RSK-D2-D5m" secondAttribute="baseline" id="9qi-fB-jEF"/>
+                            <constraint firstItem="S5b-GW-Fze" firstAttribute="baseline" secondItem="RSK-D2-D5m" secondAttribute="firstBaseline" id="FhU-gZ-PXa"/>
+                            <constraint firstItem="jsp-3f-QtE" firstAttribute="leading" secondItem="xKQ-0c-s4v" secondAttribute="leading" id="J3Z-n3-Yma"/>
+                            <constraint firstItem="S5b-GW-Fze" firstAttribute="leading" secondItem="yR1-mM-wJh" secondAttribute="trailing" constant="81" id="JkI-3s-Z7U"/>
+                            <constraint firstItem="vue-XF-n83" firstAttribute="trailing" secondItem="RSK-D2-D5m" secondAttribute="trailing" id="M8a-9Q-lLd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jsp-3f-QtE" secondAttribute="trailing" constant="-56" id="Od7-s7-164"/>
+                            <constraint firstItem="xKQ-0c-s4v" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leading" id="PK8-fT-JiT"/>
+                            <constraint firstItem="d3S-id-8Sh" firstAttribute="top" secondItem="xKQ-0c-s4v" secondAttribute="bottom" constant="74" id="R2A-0c-Jdh"/>
+                            <constraint firstItem="yR1-mM-wJh" firstAttribute="leading" secondItem="S5b-GW-Fze" secondAttribute="leading" id="qe2-nk-7rX"/>
+                            <constraint firstItem="d3S-id-8Sh" firstAttribute="top" secondItem="RSK-D2-D5m" secondAttribute="bottom" constant="296" id="rkY-97-JXR"/>
+                            <constraint firstItem="S5b-GW-Fze" firstAttribute="top" secondItem="RSK-D2-D5m" secondAttribute="top" id="t6X-a1-sGe"/>
+                            <constraint firstItem="xKQ-0c-s4v" firstAttribute="top" secondItem="zm4-li-RXa" secondAttribute="bottom" id="uGE-VK-imM"/>
+                            <constraint firstItem="xKQ-0c-s4v" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leading" id="vtM-74-wrv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RSK-D2-D5m" secondAttribute="trailing" constant="36" id="yMu-Eg-2N9"/>
+                            <constraint firstItem="S5b-GW-Fze" firstAttribute="leading" secondItem="yR1-mM-wJh" secondAttribute="leading" id="yTT-MD-tZ4"/>
+                            <constraint firstItem="S5b-GW-Fze" firstAttribute="leading" secondItem="uWY-MR-9JF" secondAttribute="leading" constant="188" id="zsx-x1-OPi"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vtM-74-wrv"/>
+                                <exclude reference="5pl-hH-mWO"/>
+                                <exclude reference="qe2-nk-7rX"/>
+                                <exclude reference="9nU-Lo-zCe"/>
+                                <exclude reference="JkI-3s-Z7U"/>
+                                <exclude reference="zsx-x1-OPi"/>
+                                <exclude reference="2PQ-ko-0D9"/>
+                                <exclude reference="J3Z-n3-Yma"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="ans1Button" destination="yR1-mM-wJh" id="ia5-OO-iJG"/>
+                        <outlet property="ans2Button" destination="S5b-GW-Fze" id="IMY-Qe-kxc"/>
+                        <outlet property="ans3Button" destination="vue-XF-n83" id="DYC-CM-xVB"/>
+                        <outlet property="ans4Button" destination="RSK-D2-D5m" id="Hco-ER-7qR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UI2-Nq-pv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1636" y="308"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PlI-u6-wYc">
@@ -90,4 +206,7 @@
             <point key="canvasLocation" x="147" y="308"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Super-Bowl" width="600" height="450"/>
+    </resources>
 </document>
