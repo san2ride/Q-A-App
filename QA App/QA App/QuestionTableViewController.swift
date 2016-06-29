@@ -1,19 +1,22 @@
 //
-//  QuestionTableViewController.swift
+//  QuestionViewController.swift
 //  QA App
 //
-//  Created by don't touch me on 6/28/16.
+//  Created by don't touch me on 6/27/16.
 //  Copyright © 2016 trvl, LLC. All rights reserved.
 //
 
 import UIKit
 
 class QuestionTableViewController: UITableViewController {
+    
     var questionsArray = [Question]()
+    
     var currentQuestion: Question?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         let quest1 = Question(question: "How many Super Bowls, Pittsburgh Steelers?", answer: "6")
         self.questionsArray.append(quest1)
@@ -33,15 +36,19 @@ class QuestionTableViewController: UITableViewController {
         return self.questionsArray.count
     }
     
-   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        
+        let q = self.questionsArray[indexPath.row]
+        
+        cell.textLabel?.text = q.question
         
         return cell
         
     }
     
-   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         self.currentQuestion = self.questionsArray[indexPath.row]
         
@@ -55,6 +62,7 @@ class QuestionTableViewController: UITableViewController {
             a.passQuestion = self.currentQuestion
             
         }
-       
     }
+    
+    
 }
