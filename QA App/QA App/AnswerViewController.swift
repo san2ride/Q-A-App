@@ -15,11 +15,8 @@ class AnswerViewController: UIViewController {
     
     @IBOutlet weak var qstringLabel: UILabel!
     @IBOutlet weak var ans1Button: UIButton!
-    
     @IBOutlet weak var ans2Button: UIButton!
-    
     @IBOutlet weak var ans3Button: UIButton!
-    
     @IBOutlet weak var ans4Button: UIButton!
     
     override func viewDidLoad() {

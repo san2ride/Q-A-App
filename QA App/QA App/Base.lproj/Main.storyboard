@@ -7,52 +7,36 @@
     </dependencies>
     <scenes>
         <!--Questions-->
-        <scene sceneID="c6I-AT-fl4">
+        <scene sceneID="XFQ-Dc-4Ut">
             <objects>
-                <viewController id="MAo-FL-74d" customClass="QuestionViewController" customModule="QA_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EtX-mK-mob"/>
-                        <viewControllerLayoutGuide type="bottom" id="xmT-Ww-rbY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="duL-xo-HoS">
+                <tableViewController id="oaY-n7-OSe" customClass="QuestionTableViewController" customModule="QA_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="S8M-wx-Cdg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yfS-ru-xPM">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Szl-we-waQ">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Szl-we-waQ" id="x9h-9Q-oTp">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="MAo-FL-74d" id="YOH-Rq-IYc"/>
-                                    <outlet property="delegate" destination="MAo-FL-74d" id="Cf0-Md-ow1"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yfS-ru-xPM" firstAttribute="leading" secondItem="duL-xo-HoS" secondAttribute="leading" id="2yb-80-giN"/>
-                            <constraint firstItem="yfS-ru-xPM" firstAttribute="top" secondItem="EtX-mK-mob" secondAttribute="bottom" id="ChW-TG-DJ5"/>
-                            <constraint firstItem="xmT-Ww-rbY" firstAttribute="top" secondItem="yfS-ru-xPM" secondAttribute="bottom" id="PEa-Cv-A1L"/>
-                            <constraint firstAttribute="trailing" secondItem="yfS-ru-xPM" secondAttribute="trailing" id="usM-To-uhK"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Questions" id="9nI-xA-nAi"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="TTp-Dy-sSS">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TTp-Dy-sSS" id="pyK-cF-0jW">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oaY-n7-OSe" id="mQw-cR-XVz"/>
+                            <outlet property="delegate" destination="oaY-n7-OSe" id="Jru-H5-fhM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Questions" id="wFh-x2-quU"/>
                     <connections>
-                        <segue destination="aXe-RX-FUt" kind="show" identifier="AnswerSegue" id="YtJ-yK-g5q"/>
+                        <segue destination="aXe-RX-FUt" kind="show" identifier="AnswerSegue" id="a96-fj-hxo"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yar-Zp-uY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYw-Pv-BfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="308"/>
+            <point key="canvasLocation" x="811" y="308"/>
         </scene>
         <!--Answer View Controller-->
         <scene sceneID="e6A-nl-8t5">
@@ -76,19 +60,6 @@
                                 <state key="normal" title="Answer 1" backgroundImage="Strip"/>
                                 <connections>
                                     <action selector="ans1ButtonTapped:" destination="aXe-RX-FUt" eventType="touchUpInside" id="vG3-Vd-mO5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vue-XF-n83">
-                                <rect key="frame" x="337" y="155" width="95" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="Sse-6e-cF4"/>
-                                    <constraint firstAttribute="height" constant="35" id="uMb-Tr-3nn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="16"/>
-                                <state key="normal" title="Answer 3" backgroundImage="Strip"/>
-                                <connections>
-                                    <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="Uub-iW-nRd"/>
-                                    <action selector="ans3ButtonTapped:" destination="aXe-RX-FUt" eventType="touchUpInside" id="SvR-Cw-5ah"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSK-D2-D5m">
@@ -130,6 +101,19 @@
                                 <connections>
                                     <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="7Iz-h6-LFj"/>
                                     <action selector="ans2ButtonTapped:" destination="aXe-RX-FUt" eventType="touchUpInside" id="TU8-fj-keO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vue-XF-n83">
+                                <rect key="frame" x="337" y="155" width="95" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="Sse-6e-cF4"/>
+                                    <constraint firstAttribute="height" constant="35" id="uMb-Tr-3nn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Bold" family="Iowan Old Style" pointSize="16"/>
+                                <state key="normal" title="Answer 3" backgroundImage="Strip"/>
+                                <connections>
+                                    <action selector="addButton:" destination="aXe-RX-FUt" eventType="touchUpInside" id="Uub-iW-nRd"/>
+                                    <action selector="ans3ButtonTapped:" destination="aXe-RX-FUt" eventType="touchUpInside" id="SvR-Cw-5ah"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -185,7 +169,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="MAo-FL-74d" kind="relationship" relationship="rootViewController" id="0mX-ja-5hQ"/>
+                        <segue destination="oaY-n7-OSe" kind="relationship" relationship="rootViewController" id="Ncd-PU-KRT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Be-Jq-P4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
